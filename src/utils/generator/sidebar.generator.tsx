@@ -7,10 +7,16 @@ const SidebarGenerator = (SideSegments: IAdmin[], role: string) => {
       prev.push({
         key: curr.name,
         label: curr.name,
-        children: curr.children.map((child) => ({
-          key: child.name,
-          label: <NavLink to={`/${role}/${child.path}`}>{child.name}</NavLink>,
-        })),
+        children: curr.children.map((child) => {
+          if (child.name) {
+            return {
+              key: child.name,
+              label: (
+                <NavLink to={`/${role}/${child.path}`}>{child.name}</NavLink>
+              ),
+            };
+          }
+        }),
       });
     } else {
       prev.push({

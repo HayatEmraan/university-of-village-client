@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Pagination, Space, Table } from "antd";
 import type { TableColumnsType, TableProps } from "antd";
 import { useGetAllStudentsQuery } from "../../../redux/features/admin/usermanagement/studentuserapi";
+import StatusPopUp from "../../../components/ui/statuspopup";
 
 interface DataType {
   key: React.Key;
@@ -42,12 +43,12 @@ const columns: TableColumnsType<DataType> = [
 
   {
     title: "Action",
-    render: () => {
+    render: (data) => {
       return (
         <Space>
           <Button>Details</Button>
-          <Button>Update</Button>
-          <Button>Block</Button>
+          <Button href={`/admin/update-student/${data.key}`}>Update</Button>
+          <StatusPopUp id={data.key} name={data.name} />
         </Space>
       );
     },

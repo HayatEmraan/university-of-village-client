@@ -9,6 +9,7 @@ import AcademicDepartment from "../pages/admin/academicmanagement/academicdepart
 import CreateAcademicFaculty from "../pages/admin/academicmanagement/createacademicfaculty";
 import AcademicFaculty from "../pages/admin/academicmanagement/academicfaculty";
 import ShowStudents from "../pages/admin/usermanagement/showstudents";
+import UpdateStudent from "../pages/admin/usermanagement/updatestudent";
 
 const AdminSegments = [
   {
@@ -63,6 +64,10 @@ const AdminSegments = [
         name: "List of Student",
         path: "list-of-students",
         element: <ShowStudents />,
+      },
+      {
+        path: "update-student/:studentId",
+        element: <UpdateStudent />,
       },
       {
         name: "Create Admin",

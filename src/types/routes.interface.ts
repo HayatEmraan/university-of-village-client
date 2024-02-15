@@ -9,8 +9,10 @@ export interface IAdmin {
   children?: IAdmin[];
 }
 
-export interface IAdminRoute {
-  key: string;
-  label: any;
-  children?: IAdminRoute[];
-}
+export type IAdminRoute =
+  | {
+      key: string;
+      label: any;
+      children?: IAdminRoute[];
+    }
+  | undefined;
