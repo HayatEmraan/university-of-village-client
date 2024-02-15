@@ -60,7 +60,7 @@ const ShowStudents: React.FC = () => {
   const [filterOption, setFilterOption] = useState<TQuery[]>([]);
 
   const { data, isFetching } = useGetAllStudentsQuery([
-    // { name: "limit", value: 2 },
+    { name: "limit", value: 10 },
     { name: "page", value: page },
     ...filterOption,
   ]);
@@ -94,8 +94,6 @@ const ShowStudents: React.FC = () => {
 
   const metadata = data?.meta;
 
-  console.log(page);
-
   return (
     <>
       <Table
@@ -106,6 +104,7 @@ const ShowStudents: React.FC = () => {
         pagination={false}
       />
       <Pagination
+        style={{ float: "right", marginTop: "20px" }}
         pageSize={metadata?.limit}
         total={metadata?.total}
         onChange={(value) => setPage(value)}
