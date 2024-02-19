@@ -10,6 +10,10 @@ import CreateAcademicFaculty from "../pages/admin/academicmanagement/createacade
 import AcademicFaculty from "../pages/admin/academicmanagement/academicfaculty";
 import ShowStudents from "../pages/admin/usermanagement/showstudents";
 import UpdateStudent from "../pages/admin/usermanagement/updatestudent";
+import CreateSemesterRegistration from "../pages/admin/coursemanagement/createsemesterregistration";
+import RegisteredSemester from "../pages/admin/coursemanagement/registeredsemester";
+import CreateCourse from "../pages/admin/coursemanagement/createcourse";
+import Courses from "../pages/admin/coursemanagement/courses";
 
 const AdminSegments = [
   {
@@ -77,6 +81,36 @@ const AdminSegments = [
       {
         name: "Create Faculty",
         path: "create-faculty",
+        element: <CreateFaculty />,
+      },
+    ],
+  },
+  {
+    name: "Course Management",
+    children: [
+      {
+        name: "C. Semester Registration",
+        path: "create-semester-registration",
+        element: <CreateSemesterRegistration />,
+      },
+      {
+        name: "List of Registered Semester",
+        path: "list-of-registered-semester",
+        element: <RegisteredSemester />,
+      },
+      {
+        name: "Create Course",
+        path: "create-course",
+        element: <CreateCourse />,
+      },
+      {
+        name: "Courses",
+        path: "list-of-courses",
+        element: <Courses />,
+      },
+      {
+        name: "Create Offered Course",
+        path: "create-offered-course",
         element: <CreateFaculty />,
       },
     ],

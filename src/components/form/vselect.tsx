@@ -12,9 +12,10 @@ type TUVSelect = {
   label: string;
   name: string;
   disabled?: boolean;
+  multi?: "multiple" | undefined;
 };
 
-const UVSelect = ({ Options, label, name, disabled }: TUVSelect) => {
+const UVSelect = ({ Options, label, name, disabled, multi }: TUVSelect) => {
   return (
     <Controller
       name={name}
@@ -22,6 +23,7 @@ const UVSelect = ({ Options, label, name, disabled }: TUVSelect) => {
         <Form.Item label={label}>
           <Select
             {...field}
+            mode={multi}
             style={{ width: "100%" }}
             disabled={disabled}
             options={Options}

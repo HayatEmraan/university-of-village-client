@@ -58,9 +58,11 @@ export const baseApi = createApi({
   baseQuery: customBaseQuery,
   tagTypes: [
     "user",
+    "course",
     "academic_department",
     "academic_semester",
     "academic_faculty",
+    "registered_semester",
   ],
   endpoints: () => ({}),
 });
